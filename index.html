@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080d1c">
+  <meta name="description" content="My Universe — ton espace personnel pour créer, collectionner et t'organiser.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>My Universe</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">✦</span><span>MY <b>UNIVERSE</b></span></div>
+      <nav id="sideNav" aria-label="Navigation principale">
+        <button class="nav-item active" data-page="home">⌂ <span>Accueil</span></button>
+        <button class="nav-item" data-page="universes">✧ <span>Univers</span></button>
+        <button class="nav-item" data-page="cards">▧ <span>Collections</span></button>
+        <button class="nav-item" data-page="notes">▤ <span>Notes & idées</span></button>
+        <button class="nav-item" data-page="tasks">☑ <span>Organisation</span></button>
+        <button class="nav-item" data-page="music">♫ <span>Musique</span></button>
+        <button class="nav-item" data-page="settings">⚙ <span>Paramètres</span></button>
+      </nav>
+      <div class="sidebar-foot">Ton univers. Tes règles.</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-brand" data-page="home">✦ MY UNIVERSE</button>
+        <span class="local-status"><i></i> Sauvegarde locale activée</span>
+      </header>
+
+      <section id="page-home" class="page active">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">TON ESPACE PERSONNEL</p>
+            <h1 id="welcomeTitle">Bienvenue dans<br><span>ton univers.</span></h1>
+            <p class="muted">Un endroit pour imaginer, créer, collectionner et t'organiser.</p>
+          </div>
+          <div class="orbit-art" aria-hidden="true"><div class="planet"></div><span>✦</span><i></i></div>
+        </div>
+        <div class="quick-grid">
+          <button class="quick-card" data-page="universes"><span>✧</span><b>Mes univers</b><small id="homeUniverses">0 univers</small></button>
+          <button class="quick-card" data-page="cards"><span>▧</span><b>Mes collections</b><small id="homeCards">0 cartes</small></button>
+          <button class="quick-card" data-page="notes"><span>▤</span><b>Mes notes</b><small id="homeNotes">0 notes</small></button>
+          <button class="quick-card" data-page="tasks"><span>☑</span><b>À organiser</b><small id="homeTasks">0 tâches</small></button>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">TON COMPAGNON</p><h2>Une présence dans ton univers</h2></div></div>
+        <div class="companion-panel">
+          <div class="companion-avatar" id="homePet">🐉</div>
+          <div><b id="petGreeting">Ton dragon veille sur ton univers.</b><p class="muted">Tu peux changer ton compagnon dans les paramètres.</p></div>
+          <button class="outline-btn" data-page="settings">Personnaliser</button>
+        </div>
+        <p class="privacy-note">☾ Tes données restent sur cet appareil pour le moment. La synchronisation entre appareils sera ajoutée dans une prochaine étape.</p>
+      </section>
+
+      <section id="page-universes" class="page">
+        <div class="page-heading"><div><p class="eyebrow">EXPLORATION</p><h1>Mes univers</h1><p class="muted">Imagine des mondes et rassemble toutes tes idées.</p></div><button class="primary-btn" id="addUniverse">＋ Créer un univers</button></div>
+        <div id="universeList" class="content-grid"></div>
+        <div id="universeEmpty" class="empty-state">✧<h3>Aucun univers pour le moment</h3><p>Ton prochain monde commence ici.</p></div>
+      </section>
+
+      <section id="page-cards" class="page">
+        <div class="page-heading"><div><p class="eyebrow">COLLECTION</p><h1>Cartes collector</h1><p class="muted">Crée des fiches pour tes personnages, créatures et êtres mythologiques.</p></div><button class="primary-btn" id="addCard">＋ Créer une carte</button></div>
+        <div class="toolbar"><input id="cardSearch" placeholder="Rechercher une carte…"><select id="cardFilter"><option value="all">Toutes les catégories</option><option>Dragon</option><option>Personnage</option><option>Créature</option><option>Mythologie</option><option>Personnalisé</option></select></div>
+        <div id="cardList" class="card-grid"></div>
+        <div id="cardEmpty" class="empty-state">▧<h3>Ta collection est vide</h3><p>Crée ta première carte collector.</p></div>
+      </section>
+
+      <section id="page-notes" class="page">
+        <div class="page-heading"><div><p class="eyebrow">CARNET PERSONNEL</p><h1>Notes & idées</h1><p class="muted">Garde tes pensées et tes inspirations au même endroit.</p></div><button class="primary-btn" id="addNote">＋ Nouvelle note</button></div>
+        <div id="noteList" class="content-grid"></div><div id="noteEmpty" class="empty-state">▤<h3>Pas encore de notes</h3><p>Une idée à garder ? Ajoute-la ici.</p></div>
+      </section>
+
+      <section id="page-tasks" class="page">
+        <div class="page-heading"><div><p class="eyebrow">ESPACE ORGANISATION</p><h1>Mes tâches</h1><p class="muted">Une petite étape après l'autre.</p></div></div>
+        <form id="taskForm" class="inline-form"><input id="taskInput" required maxlength="120" placeholder="Ajouter une tâche…"><button class="primary-btn">＋ Ajouter</button></form>
+        <div id="taskList" class="task-list"></div><div id="taskEmpty" class="empty-state">☑<h3>Tout est tranquille</h3><p>Tu n'as pas encore ajouté de tâche.</p></div>
+      </section>
+
+      <section id="page-music" class="page">
+        <div class="page-heading"><div><p class="eyebrow">AMBIANCE SONORE</p><h1>Ma musique</h1><p class="muted">Organise tes titres et tes playlists préférés.</p></div><button class="primary-btn" id="addMusic">＋ Ajouter un titre</button></div>
+        <div class="music-info">♫ Cette première version permet de garder une liste de titres et d'artistes. Elle ne diffuse pas de musique en streaming. Tu pourras ajouter des fichiers audio personnels dans une évolution future.</div>
+        <div id="musicList" class="content-grid"></div><div id="musicEmpty" class="empty-state">♫<h3>Ta bibliothèque est vide</h3><p>Ajoute un titre pour commencer ta liste.</p></div>
+      </section>
+
+      <section id="page-settings" class="page">
+        <div class="page-heading"><div><p class="eyebrow">PERSONNALISATION</p><h1>Paramètres</h1><p class="muted">Fais de My Universe un espace qui te ressemble.</p></div></div>
+        <div class="settings-card">
+          <label for="displayName">Nom affiché</label><input id="displayName" maxlength="30" placeholder="Ton nom ou pseudo">
+          <label for="petSelect">Choisis ton compagnon</label><select id="petSelect"><option value="🐶">Chien</option><option value="🐱">Chat</option><option value="🐉" selected>Dragon</option><option value="🦖">Dinosaure</option><option value="🪽">Ikran</option><option value="🐯">Tigre</option><option value="🐅">Tigre blanc</option><option value="🐺">Loup</option><option value="🦌">Cerf</option><option value="🌑">Sombral</option><option value="🔥">Phénix</option></select>
+          <label for="accentSelect">Couleur d'accentuation</label><select id="accentSelect"><option value="cyan">Cyan</option><option value="violet">Violet</option><option value="green">Vert</option></select>
+          <div class="settings-actions"><button class="primary-btn" id="saveSettings">Enregistrer</button><button class="outline-btn danger" id="exportData">Exporter mes données</button></div>
+          <p class="muted small">L'export crée une copie JSON de tes données. Conserve-la dans un endroit sûr.</p>
+        </div>
+      </section>
+
+      <footer>MY UNIVERSE <span>•</span> VERSION 0.1 — PREMIÈRE BASE</footer>
+    </main>
+  </div>
+
+  <nav class="mobile-nav" aria-label="Navigation mobile">
+    <button class="active" data-page="home">⌂<small>Accueil</small></button><button data-page="universes">✧<small>Univers</small></button><button data-page="cards">▧<small>Cartes</small></button><button data-page="notes">▤<small>Notes</small></button><button data-page="tasks">☑<small>Tâches</small></button><button data-page="settings">⚙<small>Réglages</small></button>
+  </nav>
+  <div id="modalRoot"></div>
+  <script src="app.js"></script>
+</body>
+</html>

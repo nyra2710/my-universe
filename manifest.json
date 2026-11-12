@@ -1,0 +1,19 @@
+{
+  "name": "My Universe",
+  "short_name": "My Universe",
+  "description": "Ton espace personnel de création et d'organisation.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080d1c",
+  "theme_color": "#080d1c",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
